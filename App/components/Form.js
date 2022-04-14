@@ -33,6 +33,7 @@ export const TextField = ({label, ...props}) => (
   <View style={styles.row}>
     <Text style={styles.label}>{label}</Text>
     <TextInput
+      testID="Form.TextInput"
       style={styles.textfield}
       placeholderTextColor="#828282"
       {...props}
@@ -40,6 +41,8 @@ export const TextField = ({label, ...props}) => (
   </View>
 );
 
-export const ErrorText = ({text = ''}) => (
-  <Text style={styles.errorText}>{text}</Text>
+export const ErrorText = ({text = '', ...props}) => (
+  <Text {...props} style={styles.errorText}>
+    {text} - {text}
+  </Text>
 );
